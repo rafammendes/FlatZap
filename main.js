@@ -1,5 +1,4 @@
 const { app, BrowserWindow, session } = require('electron');
-const path = require('path');
 
 async function createWindow() {
   const customSession = session.fromPartition('persist:whatsapp');
@@ -14,11 +13,15 @@ async function createWindow() {
     }
   });
 
-  mainWindow.loadURL('https://web.whatsapp.com/');
+  try {
+    await mainWindow.loadURL('https://web.whatsapp.com/');
+  } catch (error) {
+    console.error('Falha ao carregar a URL do WhatsApp:', error);
+  }
 }
 
-app.whenReady().then(() => {
-  createWindow();
+app.whenReady().then(async () => {
+  await createWindow();
 
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();
