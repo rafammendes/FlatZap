@@ -1,0 +1,38 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.npm/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# build outputs
+dist/
+out/
+build/
+
+# IDEs and editors
+.idea/
+.vscode/
+.DS_Store
+
+# Environment variables
+.env
+.env.local
+
+# Electron
+electron-debug/
+release/
+
+# Testing
+coverage/
+.nyc_output/
+
+# Misc
+.cache/
